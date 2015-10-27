@@ -19,7 +19,7 @@ class Parentesco extends Model
 
     public function cargas(){
 
-    	return $this->hasMany('CargaFamiliar','parentesco_id','id');
+    	return $this->hasMany('\App\CargaFamiliar','parentesco_id','id');
     	
     }
 }

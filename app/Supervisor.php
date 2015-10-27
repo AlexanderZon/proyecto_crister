@@ -19,7 +19,7 @@ class Supervisor extends Model
 
     public function trabajadores(){
 
-    	return $this->hasMany('Trabajador','supervisor_id','id');
+    	return $this->hasMany('\App\Trabajador','supervisor_id','id');
     	
     }
 }

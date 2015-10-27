@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Rol extends Model
 {
@@ -13,13 +14,13 @@ class Rol extends Model
 
 	protected $fillable = [];
 
-    use SoftDeletingTrait;
+    use SoftDeletes;
 
     protected $dates = ['deleted_at'];
 
     public function usuarios(){
 
-    	return $this->hasMany('User','rol_id','id');
+    	return $this->hasMany('\App\User','rol_id','id');
     	
     }
 }

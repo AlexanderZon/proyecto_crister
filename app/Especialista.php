@@ -19,7 +19,7 @@ class Especialista extends Model
 
     public function especialidad(){
 
-    	return $this->belongsTo('Especialidad','especialidad_id','id');
+    	return $this->belongsTo('\App\Especialidad','especialidad_id','id');
     	
     }
 }

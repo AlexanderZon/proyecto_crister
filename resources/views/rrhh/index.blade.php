@@ -1,0 +1,1 @@
+./resources/views/rrhh/index.blade.php

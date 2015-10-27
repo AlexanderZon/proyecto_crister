@@ -19,7 +19,7 @@ class Profesion extends Model
 
     public function formaciones(){
 
-    	return $this->hasMany('Formacion','profesion_id','id');
+    	return $this->hasMany('\App\Formacion','profesion_id','id');
 
     }
 

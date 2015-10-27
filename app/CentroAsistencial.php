@@ -19,13 +19,13 @@ class CentroAsistencial extends Model
 
     public function especialidades(){
 
-    	return $this->hasMany('Especialidad','centro_asistencial_id','id');
+    	return $this->hasMany('\App\Especialidad','centro_asistencial_id','id');
 
     }
 
     public function reposos(){
 
-    	return $this->hasMany('Reposo','centro_asistencial_id','id');
+    	return $this->hasMany('\App\Reposo','centro_asistencial_id','id');
     	
     }
 }

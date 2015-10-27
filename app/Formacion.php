@@ -19,19 +19,19 @@ class Formacion extends Model
 
     public function profesion(){
 
-    	return $this->belongsTo('Profesion','profesion_id','id');
+    	return $this->belongsTo('\App\Profesion','profesion_id','id');
 
     }
 
     public function trabajador(){
 
-    	return $this->belongsTo('Trabajador','trabajador_id','id');
+    	return $this->belongsTo('\App\Trabajador','trabajador_id','id');
 
     }
 
     public function nivel(){
 
-    	return $this->belongsTo('NivelEducativo','nivel_educativo_id','id');
+    	return $this->belongsTo('\App\NivelEducativo','nivel_educativo_id','id');
     	
     }
 }

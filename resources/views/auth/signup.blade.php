@@ -1,0 +1,1 @@
+./resources/views/auth/signup.blade.php

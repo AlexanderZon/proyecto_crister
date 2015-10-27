@@ -19,7 +19,7 @@ class Motivo extends Model
 
     public function permiso(){
 
-    	return $this->hasMany('Permiso','motivo_id','id');
+    	return $this->hasMany('\App\Permiso','motivo_id','id');
 
     }
     

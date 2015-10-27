@@ -19,13 +19,13 @@ class Cargo extends Model
 
     public function trabajador(){
 
-    	return $this->hasMany('Trabajador', 'cargo_id', 'id');
+    	return $this->hasMany('\App\Trabajador', 'cargo_id', 'id');
 
     }
 
     public function tipo(){
 
-    	return $this->belongsTo('TipoTrabajador', 'tipo_trabajador_id', 'id');
+    	return $this->belongsTo('\App\TipoTrabajador', 'tipo_trabajador_id', 'id');
     	
     }
 

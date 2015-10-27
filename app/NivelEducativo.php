@@ -19,7 +19,7 @@ class NivelEducativo extends Model
 
     public function formaciones(){
 
-    	return $this->hasMany('Formacion','nivel_educativo_id','id');
+    	return $this->hasMany('\App\Formacion','nivel_educativo_id','id');
     	
     }
 }

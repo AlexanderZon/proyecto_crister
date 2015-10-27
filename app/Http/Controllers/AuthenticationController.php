@@ -5,82 +5,73 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Auth;
+use Redirect;
+use View;
+use Session;
+use Input;
 
 class AuthenticationController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
+    public function getIndex(){
+
+        if(Auth::check()):
+
+            switch(Auth::user()->rol->nombre):
+                case 'administrador':
+                    return Redirect::to('/administrador');
+                    break;
+                case 'rrhh':
+                    return Redirect::to('/rrhh');
+                    break;
+                case 'trabajador':
+                    return Redirect::to('/trabajador');
+                    break;
+                default:
+                    return Redirect::to('/trabajador');
+                    break;
+            endswitch;
+
+        else:
+            return Redirect::to('/auth/login');
+        endif;
+
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+    public function getLogin(){
+        
+        if(Auth::check()):
+
+            return Redirect::to('/auth');
+
+        else:
+
+            $args = array(
+                'msg_error' => Session::get('msg_error')
+                );
+
+            return View::make('auth.login')->with($args);
+
+        endif;
+
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+    public function postLogin(){
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+        $credentials = array(
+            'email' => Input::get('email'),
+            'password' => Input::get('password')
+            );
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
+        if(Auth::attempt($credentials)):
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+            return Redirect::to('/auth');
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        else:
+
+            return Redirect::to('/auth/login')->with('msg_error', 'Usuario o Contraseña Inválida');
+
+        endif;
+
     }
 }

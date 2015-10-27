@@ -19,7 +19,7 @@ class Dependencia extends Model
 
     public function trabajadores(){
 
-    	return $this->hasMany('Trabajador','dependencia_id','id');
+    	return $this->hasMany('\App\Trabajador','dependencia_id','id');
     	
     }
 }

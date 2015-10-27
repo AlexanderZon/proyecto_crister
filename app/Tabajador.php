@@ -19,55 +19,55 @@ class Tabajador extends Model
 
     public function dependencia(){
 
-    	return $this->belongsTo('Dependencia','dependencia_id','id');
+    	return $this->belongsTo('\App\Dependencia','dependencia_id','id');
 
     }
 
     public function status(){
 
-    	return $this->belongsTo('Status','status_id','id');
+    	return $this->belongsTo('\App\Status','status_id','id');
 
     }
 
     public function laboral(){
 
-    	return $this->belongsTo('DatoLaboral','dato_laboral_id','id');
+    	return $this->belongsTo('\App\DatoLaboral','dato_laboral_id','id');
 
     }
 
     public function carga(){
 
-    	return $this->hasMany('CargaLaboral','trabajador_id','id');
+    	return $this->hasMany('\App\CargaLaboral','trabajador_id','id');
 
     }
 
     public function cargo(){
 
-    	return $this->belongsTo('Cargo','cargo_id','id');
+    	return $this->belongsTo('\App\Cargo','cargo_id','id');
 
     }
 
     public function permisos(){
 
-    	return $this->hasMany('Permiso','trabajador_id','id');
+    	return $this->hasMany('\App\Permiso','trabajador_id','id');
 
     }
 
     public function reposos(){
 
-    	return $this->hasMany('Reposo','trabajador_id','id');
+    	return $this->hasMany('\App\Reposo','trabajador_id','id');
 
     }
 
     public function vacaciones(){
 
-    	return $this->hasMany('Vacacion','trabajador_id','id');
+    	return $this->hasMany('\App\Vacacion','trabajador_id','id');
 
     }
 
     public function formaciones(){
 
-    	return $this->hasMany('Formacion','trabajador_id','id');
+    	return $this->hasMany('\App\Formacion','trabajador_id','id');
     	
     }
 

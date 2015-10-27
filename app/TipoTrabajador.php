@@ -19,7 +19,7 @@ class TipoTrabajador extends Model
 
     public function cargos(){
 
-    	return $this->hasMany('Cargo','tipo_trabajador_id','id');
+    	return $this->hasMany('\App\Cargo','tipo_trabajador_id','id');
     	
     }
 }

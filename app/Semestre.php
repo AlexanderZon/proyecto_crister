@@ -19,7 +19,7 @@ class Semestre extends Model
 
     public function periodo(){
 
-    	return $this->belongsTo('Periodo','periodo_id','id');
+    	return $this->belongsTo('\App\Periodo','periodo_id','id');
 
     }
 }

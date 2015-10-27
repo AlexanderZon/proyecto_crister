@@ -19,13 +19,13 @@ class Especialidad extends Model
 
     public function especialistas(){
 
-    	return $this->hasMany('Especialista','especialidad_id','id');
+    	return $this->hasMany('\App\Especialista','especialidad_id','id');
 
     }
 
     public function centro(){
 
-    	return $this->belongsTo('CentroAsistencial','centro_asistenacial_id','id');
+    	return $this->belongsTo('\App\CentroAsistencial','centro_asistenacial_id','id');
     	
     }
 }

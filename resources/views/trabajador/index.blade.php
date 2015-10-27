@@ -1,0 +1,1 @@
+./resources/views/trabajador/index.blade.php

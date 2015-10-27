@@ -19,7 +19,7 @@ class Status extends Model
 
     public function trabajadores(){
 
-    	return $this->hasMany('Trabajador','status_id','id');
+    	return $this->hasMany('\App\Trabajador','status_id','id');
 
     }
 }

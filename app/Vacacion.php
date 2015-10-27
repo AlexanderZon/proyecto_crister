@@ -19,13 +19,13 @@ class Vacacion extends Model
 
     public function trabajador(){
 
-    	return $this->belongsTo('Trabajador','trabajador_id','id');
+    	return $this->belongsTo('\App\Trabajador','trabajador_id','id');
 
     }
 
     public function periodo(){
 
-    	return $this->belongsTo('Periodo','periodo_id','id');
+    	return $this->belongsTo('\App\Periodo','periodo_id','id');
     	
     }
 

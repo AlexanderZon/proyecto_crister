@@ -19,19 +19,19 @@ class Periodo extends Model
 
     public function permisos(){
 
-    	return $this->hasMany('Permiso','periodo_id','id');
+    	return $this->hasMany('\App\Permiso','periodo_id','id');
 
     }
 
     public function vacaciones(){
 
-    	return $this->hasMany('Vacacion','periodo_id','id');
+    	return $this->hasMany('\App\Vacacion','periodo_id','id');
 
     }
 
     public function reposo(){
 
-    	return $this->hasMany('Reposo','periodo_id','id');
+    	return $this->hasMany('\App\Reposo','periodo_id','id');
     	
     }
 }

@@ -19,7 +19,7 @@ class DatoLaboral extends Model
 
     public function trabajador(){
 
-    	return $this->hasOne('Trabajador','dato_laboral_id','id');
+    	return $this->hasOne('\App\Trabajador','dato_laboral_id','id');
 
     }
     

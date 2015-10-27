@@ -19,13 +19,13 @@ class CargaFamiliar extends Model
 
     public function trabajador(){
 
-    	return $this->belongsTo('Trabajador', 'trabajador_id', 'id');
+    	return $this->belongsTo('\App\Trabajador', 'trabajador_id', 'id');
 
     }
 
     public function parentesco(){
 
-    	return $this->belongsTo('Parentesco', 'parentesco_id', 'id');
+    	return $this->belongsTo('\App\Parentesco', 'parentesco_id', 'id');
     	
     }
 

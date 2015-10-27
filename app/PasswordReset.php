@@ -13,13 +13,9 @@ class PasswordReset extends Model
 
 	protected $fillable = [];
 
-    use SoftDeletingTrait;
-
-    protected $dates = ['deleted_at'];
-
     public function users(){
 
-    	return $this->belongsTo('User','user_id','id');
+    	return $this->belongsTo('\App\User','user_id','id');
     	
     }
 }
